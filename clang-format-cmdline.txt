@@ -1,0 +1,2 @@
+clang-format -style=file:.clang-format -i .\aoc_2023\src\*.c
+clang-format -style=file:.clang-format -i .\aoc_2023\src\*.h
