@@ -10,8 +10,12 @@ set(CMAKE_C_STANDARD 11)
 include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/lib)
 file(GLOB all_SRCS 
     "${PROJECT_SOURCE_DIR}/src/*.c"
-    "${PROJECT_SOURCE_DIR}/src/*.h")
+    "${PROJECT_SOURCE_DIR}/src/*.h"
+    "${PROJECT_SOURCE_DIR}/src/day_1/*.c"
+    "${PROJECT_SOURCE_DIR}/src/day_1/*.h")
 
 include(compiler_flags.cmake)
 
 add_executable(${PROJECT_NAME} ${all_SRCS})
+
+add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/resources/ $<TARGET_FILE_DIR:${PROJECT_NAME}>)
