@@ -7,5 +7,6 @@
 #include <limits.h>
 #include <string.h>
 #include <stdbool.h>
+#include <errno.h>
 
 #endif
