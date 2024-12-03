@@ -1,2 +1,2 @@
 # advent_of_code
-Solving the AoC puzzels. Refer https://adventofcode.com/2024/about
+Solving the AoC puzzles. Refer [https://adventofcode.com/2023/about](https://adventofcode.com/2023/about)
