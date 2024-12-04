@@ -9,7 +9,7 @@ $files = Get-ChildItem -Path $rootDir -Recurse -Include *.c, *.h
 # Iterate over each file and run clang-format
 foreach ($file in $files) {
     Write-Host "Formatting $($file.FullName)..."
-    clang-format -style=file:.clang-format -i $file.FullName
+    clang-format -style=Microsoft -i $file.FullName
     Write-Host "$($file.FullName) formatted."
 }
 
