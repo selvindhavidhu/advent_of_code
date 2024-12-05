@@ -3,14 +3,16 @@
 
 #include "stdheaders.h"
 
-struct nodei {
-	int value;
-	struct nodei *next;
+struct nodei
+{
+    int value;
+    struct nodei *next;
 };
 
-struct int_list {
-	struct nodei *head;
-	int size;
+struct int_list
+{
+    struct nodei *head;
+    int size;
 };
 
 void int_list_init(struct int_list *list);

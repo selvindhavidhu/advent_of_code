@@ -1,10 +1,10 @@
 #include "day_1/day_1.h"
-#include "stdheaders.h"
 #include "int_list.h"
+#include "stdheaders.h"
 
 void printi(int value)
 {
-	printf("%d\t", value);
+    printf("%d\t", value);
 }
 
 int main(void)
