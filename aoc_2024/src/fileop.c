@@ -5,8 +5,8 @@ size_t get_file_size(const char *file_path)
     FILE *fp = fopen(file_path, "rb");
     if (!fp)
     {
-        fprintf(stderr, "Failed to open file: %s for reading.\n", file_path);
-        exit(ENOENT);
+        fprintf(stderr, "Failed to open file: '%s' for reading.\n", file_path);
+	    return 0;
     }
 
     fseek(fp, 0, SEEK_END);
@@ -15,20 +15,21 @@ size_t get_file_size(const char *file_path)
     return size;
 }
 
-void read_file_contents(const char *file_path, char *buffer, size_t buflen)
+size_t read_file_contents(const char *file_path, char *buffer, size_t buflen)
 {
     if (!buffer || buflen < 1)
-        return;
+        return 0;
 
     FILE *fp = fopen(file_path, "rb");
     if (!fp)
     {
         fprintf(stderr, "Failed to open file: %s for reading.\n", file_path);
-        exit(ENOENT);
+        return 0;
     }
 
-    fread(buffer, sizeof(char), buflen, fp);
-    buffer[buflen - 1] = '\0';
-
+    size_t nbytes = fread(buffer, sizeof(char), buflen, fp);
     fclose(fp);
+    buffer[buflen - 1] = '\0';
+    
+    return nbytes;
 }

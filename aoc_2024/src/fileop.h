@@ -4,6 +4,6 @@
 #include "stdheaders.h"
 
 size_t get_file_size(const char *file_path);
-void read_file_contents(const char *file_path, char *buffer, size_t buflen);
+size_t read_file_contents(const char *file_path, char *buffer, size_t buflen);
 
 #endif
