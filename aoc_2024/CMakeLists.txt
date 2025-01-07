@@ -16,6 +16,6 @@ file(GLOB all_SRCS
 
 include(compiler_flags.cmake)
 
-add_executable(${PROJECT_NAME} ${all_SRCS} "src/int_list.h" "src/int_list.c" "src/fileop.h" "src/fileop.c")
+add_executable(${PROJECT_NAME} ${all_SRCS} "src/int_list.h" "src/int_list.c" "src/fileop.h" "src/fileop.c" "src/int_vector.h" "src/int_vector.c")
 
 add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/resources/ $<TARGET_FILE_DIR:${PROJECT_NAME}>)
